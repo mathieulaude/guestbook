@@ -24,8 +24,8 @@ spec:
             memory: 50M
         volumeMounts:
         - mountPath: "/usr/share/nginx/html"
-          name: secret-map
+          name: guestbook-secret
       volumes:
-      - name: secret-map
+      - name: guestbook-secret
         secret:
-          secretName: nginx-secret
+          secretName: guestbook-secret
