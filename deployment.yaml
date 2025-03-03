@@ -14,11 +14,18 @@ spec:
         app: guestbook-ui
     spec:
       containers:
-      - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
+      - image: nginxinc/nginx-unprivileged:1.27
         name: guestbook-ui
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         resources:
           limits:
             cpu: 10m
             memory: 50M
+        volumeMounts:
+        - mountPath: "/usr/share/nginx/html"
+          name: secret-map
+      volumes:
+      - name: secret-map
+        secret:
+          secretName: nginx-secret
