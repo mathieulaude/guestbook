@@ -5,7 +5,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: demo-vault.formation-app.cpin.numerique-interieur.com
+  - host: demo.sdid-app.cpin.numerique-interieur.com
     http:
       paths:
       - backend:
